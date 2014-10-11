@@ -8,12 +8,16 @@ title: Utility Stack
   <script type="text/javascript">
   
     $(function () {
-      var url = window.location.search.match(/url=([^&]+)/);
-  if (url && url.length > 1) {
-    url = url[1];
-  } else {
-    url = "http://utility-stack.apievangelist.com/definitions/angellist-startup-api.json";
-  }
+    	
+	if (getUrlVar('swagger')) 
+		{
+		url = getUrlVar('swagger');
+		} 
+	else 
+		{
+		url = "http://utility-stack.apievangelist.com/definitions/alchemyapi-author-extraction-api.json";
+		}
+  
   window.swaggerUi = new SwaggerUi({
     url: url,
     dom_id: "swagger-ui-container",
