@@ -3,6 +3,40 @@
             </div>
 
             <div id="sidebar">
+            	
+				 <!--- Begin APIs --->           	
+                 <div class="widget widget_recent_entries">  
+                                      
+                    <script id="apiListingTemplate" type="text/template"> 
+                        {% raw  %}  
+                        <a href="{{baseURL}}" target="_blank" title="{{name}}">
+                            {{name}}
+                        </a>   
+                        {% endraw %}                                                                                                                    
+                    </script>  
+                     
+                    <script type="text/javascript">
+                        function listAPIs()
+                            {
+                            $.getJSON('apis.json', function(data) {               
+                                 $.each(data['apis'], function(key, val) {                  
+                                    var template = $('#apiListingTemplate').html();
+                                    var html = Mustache.to_html(template, val);
+                                    $('#apiListingContainer').append(html);
+                                    });         
+                                });             
+                            }    
+                    </script>
+               
+                    <h3>APIs</h3>
+                    <div id="apiListingContainer" align="center"><br /><br /> </div>
+                    
+                    <script type="text/javascript">
+                        listAPIs();
+                    </script>                    
+                        
+                </div>  
+                <!--- End APIs --->               	
                 
                  <div class="widget widget_recent_entries">  
                      <h3>Winning in the API Economy</h3>
