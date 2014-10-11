@@ -1,0 +1,280 @@
+{
+  "name": "Utility Stack",
+  "description": "This is a stack of utility APIs I'm bringing together to define a distributed stack of valuable API resources.",
+  "image": "https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png",
+  "tags": [
+    "Utility",
+    "Text",
+    "Links"
+  ],
+  "created": "2014-10-10",
+  "modified": "2014-10-10",
+  "url": "http://utility-stack.laneworks.net/apis.json",
+  "SpecificationVersion": "0.14",
+  "apis": [
+    {
+      "name": "Author Extraction API",
+      "description": "Resource for extraction the author from a blog, post, arcitcle or other content.",
+      "image": "https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png",
+      "humanURL": "http://utility-stack.laneworks.net/",
+      "baseURL": "http://utility-stack.laneworks.net/definitions/alchemyapi-author-extraction-api.json",
+      "tags": [
+        "Blog",
+        "News",
+        "Content",
+        "Author",
+        "Extraction"
+      ],
+      "properties": [
+        {
+          "type": "Swagger",
+          "url": "http://utility-stack.laneworks.net/definitions/alchemyapi-author-extraction-api.json"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "API Evangliest",
+          "email": "info@apievangelist.com",
+          "X-twitter": "apievangelist"
+        }
+      ]
+    },
+    {
+      "name": "Keyword & Term Extraction API",
+      "description": "Resource for extraction the keywords from a blog, post, arcitcle or other content.",
+      "image": "https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png",
+      "humanURL": "http://utility-stack.laneworks.net/",
+      "baseURL": "http://utility-stack.laneworks.net/definitions/alchemyapi-keyword-and-term-extraction.json",
+      "tags": [
+        "Blog",
+        "News",
+        "Content",
+        "Author",
+        "Extraction"
+      ],
+      "properties": [
+        {
+          "type": "Swagger",
+          "url": "http://utility-stack.laneworks.net/definitions/alchemyapi-keyword-and-term-extraction.json"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "API Evangliest",
+          "email": "info@apievangelist.com",
+          "X-twitter": "apievangelist"
+        }
+      ]
+    },
+    {
+      "name": "Text Extraction API",
+      "description": "Resource for extraction the body text from a blog, post, arcitcle or other content.",
+      "image": "https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png",
+      "humanURL": "http://utility-stack.laneworks.net/",
+      "baseURL": "http://utility-stack.laneworks.net/definitions/alchemyapi-text-extraction-api.json",
+      "tags": [
+        "Blog",
+        "News",
+        "Content",
+        "Extraction"
+      ],
+      "properties": [
+        {
+          "type": "Swagger",
+          "url": "http://utility-stack.laneworks.net/definitions/alchemyapi-text-extraction-api.json"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "API Evangliest",
+          "email": "info@apievangelist.com",
+          "X-twitter": "apievangelist"
+        }
+      ]
+    },
+    {
+      "name": "Startup API",
+      "description": "Resource for search for startups.",
+      "image": "https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png",
+      "humanURL": "http://utility-stack.laneworks.net/",
+      "baseURL": "http://utility-stack.laneworks.net/definitions/angellist-startup-api.json",
+      "tags": [
+        "Angellist",
+        "Startup",
+        "Business"
+      ],
+      "properties": [
+        {
+          "type": "Swagger",
+          "url": "http://utility-stack.laneworks.net/definitions/angellist-startup-api.json"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "API Evangliest",
+          "email": "info@apievangelist.com",
+          "X-twitter": "apievangelist"
+        }
+      ]
+    },
+    {
+      "name": "URL Data API",
+      "description": "Resource for search shortened URLs.",
+      "image": "https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png",
+      "humanURL": "http://utility-stack.laneworks.net/",
+      "baseURL": "http://utility-stack.laneworks.net/definitions/bitly-data-api-search.json",
+      "tags": [
+        "Link",
+        "URL",
+        "Shortener",
+        "Bitly"
+      ],
+      "properties": [
+        {
+          "type": "Swagger",
+          "url": "http://utility-stack.laneworks.net/definitions/bitly-data-api-search.json"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "API Evangliest",
+          "email": "info@apievangelist.com",
+          "X-twitter": "apievangelist"
+        }
+      ]
+    },
+    {
+      "name": "Location Normalization API",
+      "description": "Resource for normalizing a location name.",
+      "image": "https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png",
+      "humanURL": "http://utility-stack.laneworks.net/",
+      "baseURL": "http://utility-stack.laneworks.net/definitions/fullcontact-location-normalization-api.json",
+      "tags": [
+        "Link",
+        "URL",
+        "Shortener",
+        "Bitly"
+      ],
+      "properties": [
+        {
+          "type": "Swagger",
+          "url": "http://utility-stack.laneworks.net/definitions/fullcontact-location-normalization-api.json"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "API Evangliest",
+          "email": "info@apievangelist.com",
+          "X-twitter": "apievangelist"
+        }
+      ]
+    },
+    {
+      "name": "Name API",
+      "description": "Resource for normalizing a persons name.",
+      "image": "https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png",
+      "humanURL": "http://utility-stack.laneworks.net/",
+      "baseURL": "http://utility-stack.laneworks.net/definitions/fullcontact-name-api.json",
+      "tags": [
+        "Name",
+        "Person",
+        "Normalization"
+      ],
+      "properties": [
+        {
+          "type": "Swagger",
+          "url": "http://utility-stack.laneworks.net/definitions/fullcontact-name-api.json"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "API Evangliest",
+          "email": "info@apievangelist.com",
+          "X-twitter": "apievangelist"
+        }
+      ]
+    },
+    {
+      "name": "Bookmark API",
+      "description": "Resource for search bookmarks.",
+      "image": "https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png",
+      "humanURL": "http://utility-stack.laneworks.net/",
+      "baseURL": "http://utility-stack.laneworks.net/definitions/pinboard-all-posts.api.json",
+      "tags": [
+        "URL",
+        "Link",
+        "Bookmark"
+      ],
+      "properties": [
+        {
+          "type": "Swagger",
+          "url": "http://utility-stack.laneworks.net/definitions/pinboard-all-posts.api.json"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "API Evangliest",
+          "email": "info@apievangelist.com",
+          "X-twitter": "apievangelist"
+        }
+      ]
+    },
+    {
+      "name": "Word Lists API",
+      "description": "Resource for searching for word lists.",
+      "image": "https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png",
+      "humanURL": "http://utility-stack.laneworks.net/",
+      "baseURL": "http://utility-stack.laneworks.net/definitions/wordnik-word-lists-api.json",
+      "tags": [
+        "Dictionary",
+        "Words",
+        "Lists"
+      ],
+      "properties": [
+        {
+          "type": "Swagger",
+          "url": "http://utility-stack.laneworks.net/definitions/wordnik-word-lists-api.json"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "API Evangliest",
+          "email": "info@apievangelist.com",
+          "X-twitter": "apievangelist"
+        }
+      ]
+    },
+    {
+      "name": "Words API",
+      "description": "Resource for searching for words.",
+      "image": "https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png",
+      "humanURL": "http://utility-stack.laneworks.net/",
+      "baseURL": "http://utility-stack.laneworks.net/definitions/wordnik-words-api.json",
+      "tags": [
+        "Dictionary",
+        "Words"
+      ],
+      "properties": [
+        {
+          "type": "Swagger",
+          "url": "http://utility-stack.laneworks.net/definitions/wordnik-words-api.json"
+        }
+      ],
+      "contact": [
+        {
+          "FN": "API Evangliest",
+          "email": "info@apievangelist.com",
+          "X-twitter": "apievangelist"
+        }
+      ]
+    }
+  ],
+  "include": [],
+  "maintainers": [
+    {
+      "FN": "Kin",
+      "X-twitter": "apievangelist",
+      "email": "kin@email.com"
+    }
+  ]
+}

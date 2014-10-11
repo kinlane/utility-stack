@@ -3,8 +3,54 @@ layout: page
 title: Utility Stack
 ---
 
-<h1>Utiity Stack</h1>
+<h1>Utility Stack</h1>
 
+<div class="swagger-section">
+	
+  <script type="text/javascript">
+  
+    $(function () {
+      var url = window.location.search.match(/url=([^&]+)/);
+  if (url && url.length > 1) {
+    url = url[1];
+  } else {
+    url = "http://utility-stack.apievangelist.com/definitions/alchemyapi-author-extraction-api.json";
+  }
+  window.swaggerUi = new SwaggerUi({
+    url: url,
+    dom_id: "swagger-ui-container",
+    supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
+    onComplete: function(swaggerApi, swaggerUi){
+      log("Loaded SwaggerUI");
+      if(typeof initOAuth == "function") {
+        /*
+        initOAuth({
+          clientId: "your-client-id",
+          realm: "your-realms",
+          appName: "your-app-name"
+        });
+        */
+      }
+      $('pre code').each(function(i, e) {
+        hljs.highlightBlock(e)
+      });
+    },
+    onFailure: function(data) {
+      log("Unable to Load SwaggerUI");
+    },
+    docExpansion: "none",
+    sorter : "alpha",
+    docExpansion: "list"
+  });
+
+      window.swaggerUi.load();
+  });
+  
+  </script>    
+
+<!--<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>-->
+<div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+    </div>
 
 <br /><br />
 <!-- 3scale -->
