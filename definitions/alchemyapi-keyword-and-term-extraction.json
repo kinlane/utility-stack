@@ -1,0 +1,174 @@
+{
+  "swagger": 2,
+  "info": {
+    "title": "AlchemyAPI Keyword and Term Extraction ",
+    "description": "AlchemyAPI provides easy-to-use facilities for extracting topic keywords from your publicly-accessible web-based content. These URL processing calls automatically fetch the desired Internet webpage, normalize / clean it (removing ads, navigation links, and other unimportant content), and extract topic keywords.",
+    "version": "1.0"
+  },
+  "host": "access.alchemyapi.com",
+  "basePath": "/calls/url",
+  "schemes": [
+    "http"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/URLGetRankedKeywords": {
+      "get": {
+        "summary": "Keyword Extraction",
+        "description": "AlchemyAPI provides easy-to-use facilities for extracting topic keywords from your publicly-accessible web-based content. These URL processing calls automatically fetch the desired Internet webpage, normalize / clean it (removing ads, navigation links, and other unimportant content), and extract topic keywords.",
+        "operationId": "getKeywords",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "apikey",
+            "required": false,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "your private api key",
+            "required": false,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "maxRetrieve",
+            "in": "query",
+            "description": "maximum number of keywords to extract (default: 50)",
+            "required": false,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "keywordExtractMode",
+            "in": "query",
+            "description": "keyword extraction mode (normal or strict)",
+            "required": false,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "sentiment",
+            "in": "query",
+            "description": "whether to enable keyword-level sentiment analysis",
+            "required": false,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "outputMode",
+            "in": "query",
+            "description": "desired API output format",
+            "required": false,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "jsonp",
+            "in": "query",
+            "description": "desired JSONP callback",
+            "required": false,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "showSourceText",
+            "in": "query",
+            "description": "whether to include the original source text the keywords were extracted from within the API response",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "sourceText",
+            "in": "query",
+            "description": "where to obtain the text that will be processed by this API call.",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "cquery",
+            "in": "query",
+            "description": "a visual constraints query to apply to the web page.",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "xpath",
+            "in": "query",
+            "description": "an XPath query to apply to the web page.",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "baseUrl",
+            "in": "query",
+            "description": "el-tag output base http url (must be uri-argument encoded)",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Keyword Response",
+            "schema": {
+                "type": "array",
+                "items": {
+                    "$ref": "Keywords"
+                }
+            }            
+          }
+        },
+        "tags": [
+          "Keywords",
+          " Tags",
+          " Extraction",
+          " Content"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Keywords": {
+      "properties": {
+        "status": {
+          "description": "success / failure status indicating whether the request was processed.",
+          "type": "string"
+        },
+        "language": {
+          "description": "the detected language that the source text was written in.",
+          "type": "string"
+        },
+        "url": {
+          "description": "http url information was requested for.",
+          "type": "string"
+        },
+        "relevance": {
+          "description": "relevance score for a detected keyword.",
+          "type": "string"
+        },
+        "text": {
+          "description": "the detected keyword text.",
+          "type": "string"
+        },
+        "sentiment": {
+          "description": "sentiment for the detected keyword (sent only if keyword-level sentiment analysis is enabled)",
+          "type": "string"
+        },
+        "statusInfo": {
+          "description": "failure status information",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

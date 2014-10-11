@@ -1,0 +1,102 @@
+{
+	"swagger": 2,
+	"info": {
+		"title": "AlchemyAPI Text Extraction API",
+		"description": "he URLGetText call is utilized to extract the primary page / article text from a web page. AlchemyAPI will download the requested URL, extract text from the HTML document structure, and ignore page navigation, advertisements, and other undesirable page content.",
+		"version": 1.0
+	},
+	"host": "access.alchemyapi.com",
+	"basePath": "/calls/url",
+	"schemes": [
+		"http"
+	],
+	"produces": [
+		"application/json",
+		"application/xml"
+	],
+	"paths": {
+		"/URLGetText": {
+			"get": {
+				"summary": "Get Web Page Text",
+				"description": "The URLGetText call is utilized to extract the primary page / article text from a web page.",
+				"operationId": "getURLGetText",
+				"parameters": [
+					{
+						"name": "url",
+						"in": "query",
+						"description": "http url (must be uri-argument encoded) ",
+						"required": false,
+						"type": "string",
+						"format": "string"
+					},
+					{
+						"name": "apikey",
+						"in": "query",
+						"description": "your private api key ",
+						"required": false,
+						"type": "string",
+						"format": "string"
+					},
+					{
+						"name": "useMetadata",
+						"in": "query",
+						"description": "whether to use description information embedded in web page meta-data",
+						"required": true,
+						"type": "string",
+						"format": "string"
+					},
+					{
+						"name": "extractLinks",
+						"in": "query",
+						"description": "whether to include hyperlinks in the extracted web page text",
+						"required": true,
+						"type": "boolean",
+						"format": "boolean"
+					},
+					{
+						"name": "outputMode",
+						"in": "query",
+						"description": "desired API output format",
+						"required": true,
+						"type": "string",
+						"format": "string"
+					},
+					{
+						"name": "jsonp",
+						"in": "query",
+						"description": "desired JSONP callback",
+						"required": false,
+						"type": "string",
+						"format": "string"
+					}
+				],
+				"tags": [
+					"Website",
+					" Web Page",
+					" Body",
+					" Content",
+					" Text",
+					" Extraction"
+				]
+			}
+		}
+	},
+	"definitions": {
+		"Results": {
+			"properties": {
+				"status": {
+					"description": "",
+					"type": "string"
+				},
+				"url": {
+					"description": "",
+					"type": "string"
+				},
+				"text": {
+					"description": "",
+					"type": "string"
+				}
+			}
+		}
+	}
+}

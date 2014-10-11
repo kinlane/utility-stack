@@ -1,0 +1,88 @@
+{
+	"swagger": 2,
+	"info": {
+		"title": "FullContact Name API",
+		"description": "The Name Normalization method takes quasi-structured name data provided as a string and outputs the data in a structured manner. It also returns a likelihood based only on the order of the given name and family name as seen in the US population.",
+		"termsOfService": "https://www.fullcontact.com/terms/",
+		"version": "2.0"
+	},
+	"host": "api.fullcontact.com",
+	"basePath": "/v2",
+	"schemes": [
+		"http"
+	],
+	"produces": [
+		"application/json"
+	],
+	"paths": {
+		"/name/normalizer.json": {
+			"get": {
+				"summary": "Name Normalization",
+				"description": "The Name Normalization method takes quasi-structured name data provided as a string and outputs the data in a structured manner. It also returns a likelihood based only on the order of the given name and family name as seen in the US population.",
+				"operationId": "normalizeName",
+				"parameters": [
+					{
+						"name": "q",
+						"in": "query",
+						"description": "The q parameter allows you to pass a quasi-structured full name string which can include standard prefix, first name, nickname, middle name, last name and suffix.",
+						"required": false,
+						"type": "string",
+						"format": "string"
+					},
+					{
+						"name": "casing",
+						"in": "query",
+						"description": "Uppercase, lowercase, title case",
+						"required": false,
+						"type": "string",
+						"format": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Successful Name Response"
+					}
+				},
+				"tags": [
+					"Names",
+					" People",
+					" Normalization"
+				]
+			}
+		}
+	},
+	"definitions": {
+		"Name": {
+			"properties": {
+				"givenName": {
+					"description": "",
+					"type": "string"
+				},
+				"familyName": {
+					"description": "",
+					"type": "string"
+				},
+				"middleNames": {
+					"description": "",
+					"type": "string"
+				},
+				"prefixes": {
+					"description": "",
+					"type": "string"
+				},
+				"suffixes": {
+					"description": "",
+					"type": "string"
+				},
+				"nicknames": {
+					"description": "",
+					"type": "string"
+				},
+				"fullName": {
+					"description": "",
+					"type": "string"
+				}
+			}
+		}
+	}
+}

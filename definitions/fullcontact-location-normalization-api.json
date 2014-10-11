@@ -1,0 +1,100 @@
+{
+	"swagger": 2,
+	"info": {
+		"title": "FullContact Location Normalization API",
+		"description": "The Location Normalization method takes semi-structured location data via the place parameter, provided as a string, and returns structured location data in either JSON or XML format.",
+		"termsOfService": null,
+		"version": null
+	},
+	"host": "api.fullcontact.com",
+	"basePath": "/v2",
+	"schemes": [
+		"http"
+	],
+	"produces": [
+		"application/json"
+	],
+	"paths": {
+		"address/locationNormalizer.json": {
+			"get": {
+				"summary": "Location Normalization",
+				"description": "The Location Normalization method takes semi-structured location data via the place parameter, provided as a string, and returns structured location data in either JSON or XML format.",
+				"operationId": "normalizeLocation",
+				"parameters": [
+					{
+						"name": "place",
+						"in": "query",
+						"description": "The place parameter allows you to pass a semi-structured location string which can include continent, country, state, city, or county. County names must always be followed by the word "County" in your input string (ie. Collier County, Denver County, etc).",
+						"required": false,
+						"type": "string",
+						"format": "string"
+					},
+					{
+						"name": "includeZeroPopulation",
+						"in": "query",
+						"description": "Appending includeZeroPopulation=true, will display 0 population census locations.",
+						"required": true,
+						"type": "string",
+						"format": "string"
+					},
+					{
+						"name": "casing",
+						"in": "query",
+						"description": "Uppercase, lowercase, title case",
+						"required": true,
+						"type": "string",
+						"format": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Successful Address Normalization"
+					}
+				},
+				"tags": [
+					"Location",
+					" Normalization",
+					" Address"
+				]
+			}
+		}
+	},
+	"definitions": {
+		"Address": {
+			"properties": {
+				"status": {
+					"description": "",
+					"type": "string"
+				},
+				"city": {
+					"description": "",
+					"type": "string"
+				},
+				"state": {
+					"description": "",
+					"type": "string"
+				},
+				"county": {
+					"description": "",
+					"type": "string"
+				},
+				"country": {
+					"description": "",
+					"type": "string"
+				},
+				"continent": {
+					"description": "",
+					"type": "string"
+				},
+				"likelihood": {
+					"description": "",
+					"type": "string"
+				},
+				"normalizedLocation": {
+					"description": "",
+					"type": "string"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,2959 @@
+{
+	"swagger": 2,
+	"info": {
+		"title": "Wordnik Words API",
+		"description": "A dictionary API.",
+		"termsOfService": null,
+		"version": "4.0"
+	},
+	"host": "/words",
+	"basePath": "http://api.wordnik.com/v4",
+	"schemes": [
+		"http"
+	],
+	"produces": [
+		"application/json"
+	],
+	"paths": {
+		"/words.{format}/search/{query}": {
+			"": {
+				"summary": "Searches words",
+				"description": "",
+				"operationId": "searchWords",
+				"parameters": [
+					{
+						"name": "query",
+						"in": "path",
+						"description": "Search query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "caseSensitive",
+						"in": "query",
+						"description": "Search case sensitive",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "includePartOfSpeech",
+						"in": "query",
+						"description": "Only include these comma-delimited parts of speech",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "excludePartOfSpeech",
+						"in": "query",
+						"description": "Exclude these comma-delimited parts of speech",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "minCorpusCount",
+						"in": "query",
+						"description": "Minimum corpus frequency for terms",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "maxCorpusCount",
+						"in": "query",
+						"description": "Maximum corpus frequency for terms",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "minDictionaryCount",
+						"in": "query",
+						"description": "Minimum number of dictionary entries for words returned",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "maxDictionaryCount",
+						"in": "query",
+						"description": "Maximum dictionary definition count",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "minLength",
+						"in": "query",
+						"description": "Minimum word length",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "maxLength",
+						"in": "query",
+						"description": "Maximum word length",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "skip",
+						"in": "query",
+						"description": "Results to skip",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "limit",
+						"in": "query",
+						"description": "Maximum number of results to return",
+						"required": true,
+						"type": "int"
+					}
+				],
+				"tags": [
+					""
+				]
+			}
+		},
+		"/words.{format}/wordOfTheDay": {
+			"": {
+				"summary": "Returns a specific WordOfTheDay",
+				"description": "",
+				"operationId": "getWordOfTheDay",
+				"parameters": [
+					{
+						"name": "date",
+						"in": "query",
+						"description": "Fetches by date in yyyy-MM-dd",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"tags": [
+					""
+				]
+			}
+		},
+		"/words.{format}/reverseDictionary": {
+			"": {
+				"summary": "Reverse dictionary search",
+				"description": "",
+				"operationId": "reverseDictionary",
+				"parameters": [
+					{
+						"name": "query",
+						"in": "query",
+						"description": "Search term",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "findSenseForWord",
+						"in": "query",
+						"description": "Restricts words and finds closest sense",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "includeSourceDictionaries",
+						"in": "query",
+						"description": "Only include these comma-delimited source dictionaries",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "excludeSourceDictionaries",
+						"in": "query",
+						"description": "Exclude these comma-delimited source dictionaries",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "includePartOfSpeech",
+						"in": "query",
+						"description": "Only include these comma-delimited parts of speech",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "excludePartOfSpeech",
+						"in": "query",
+						"description": "Exclude these comma-delimited parts of speech",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "minCorpusCount",
+						"in": "query",
+						"description": "Minimum corpus frequency for terms",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "maxCorpusCount",
+						"in": "query",
+						"description": "Maximum corpus frequency for terms",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "minLength",
+						"in": "query",
+						"description": "Minimum word length",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "maxLength",
+						"in": "query",
+						"description": "Maximum word length",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "expandTerms",
+						"in": "query",
+						"description": "Expand terms",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "includeTags",
+						"in": "query",
+						"description": "Return a closed set of XML tags in response",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "sortBy",
+						"in": "query",
+						"description": "Attribute to sort by",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "sortOrder",
+						"in": "query",
+						"description": "Sort direction",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "skip",
+						"in": "query",
+						"description": "Results to skip",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "limit",
+						"in": "query",
+						"description": "Maximum number of results to return",
+						"required": true,
+						"type": "int"
+					}
+				],
+				"tags": [
+					""
+				]
+			}
+		},
+		"/words.{format}/randomWords": {
+			"": {
+				"summary": "Returns an array of random WordObjects",
+				"description": "",
+				"operationId": "getRandomWords",
+				"parameters": [
+					{
+						"name": "hasDictionaryDef",
+						"in": "query",
+						"description": "Only return words with dictionary definitions",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "includePartOfSpeech",
+						"in": "query",
+						"description": "CSV part-of-speech values to include",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "excludePartOfSpeech",
+						"in": "query",
+						"description": "CSV part-of-speech values to exclude",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "minCorpusCount",
+						"in": "query",
+						"description": "Minimum corpus frequency for terms",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "maxCorpusCount",
+						"in": "query",
+						"description": "Maximum corpus frequency for terms",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "minDictionaryCount",
+						"in": "query",
+						"description": "Minimum dictionary count",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "maxDictionaryCount",
+						"in": "query",
+						"description": "Maximum dictionary count",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "minLength",
+						"in": "query",
+						"description": "Minimum word length",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "maxLength",
+						"in": "query",
+						"description": "Maximum word length",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "sortBy",
+						"in": "query",
+						"description": "Attribute to sort by",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "sortOrder",
+						"in": "query",
+						"description": "Sort direction",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "limit",
+						"in": "query",
+						"description": "Maximum number of results to return",
+						"required": true,
+						"type": "int"
+					}
+				],
+				"tags": [
+					""
+				]
+			}
+		},
+		"/words.{format}/randomWord": {
+			"": {
+				"summary": "Returns a single random WordObject",
+				"description": "",
+				"operationId": "getRandomWord",
+				"parameters": [
+					{
+						"name": "hasDictionaryDef",
+						"in": "query",
+						"description": "Only return words with dictionary definitions",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "includePartOfSpeech",
+						"in": "query",
+						"description": "CSV part-of-speech values to include",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "excludePartOfSpeech",
+						"in": "query",
+						"description": "CSV part-of-speech values to exclude",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "minCorpusCount",
+						"in": "query",
+						"description": "Minimum corpus frequency for terms",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "maxCorpusCount",
+						"in": "query",
+						"description": "Maximum corpus frequency for terms",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "minDictionaryCount",
+						"in": "query",
+						"description": "Minimum dictionary count",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "maxDictionaryCount",
+						"in": "query",
+						"description": "Maximum dictionary count",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "minLength",
+						"in": "query",
+						"description": "Minimum word length",
+						"required": true,
+						"type": "int"
+					},
+					{
+						"name": "maxLength",
+						"in": "query",
+						"description": "Maximum word length",
+						"required": true,
+						"type": "int"
+					}
+				],
+				"tags": [
+					""
+				]
+			}
+		}
+	},
+	"definitions": {
+		"WordSearchResult": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"WordOfTheDay": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"Note": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"DefinitionSearchResults": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"WordObject": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"Related": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				},
+				"label1": {
+					"description": "",
+					"type": ""
+				},
+				"relationshipType": {
+					"description": "",
+					"type": ""
+				},
+				"label2": {
+					"description": "",
+					"type": ""
+				},
+				"label3": {
+					"description": "",
+					"type": ""
+				},
+				"words": {
+					"description": "",
+					"type": ""
+				},
+				"gram": {
+					"description": "",
+					"type": ""
+				},
+				"label4": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"Citation": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				},
+				"label1": {
+					"description": "",
+					"type": ""
+				},
+				"relationshipType": {
+					"description": "",
+					"type": ""
+				},
+				"label2": {
+					"description": "",
+					"type": ""
+				},
+				"label3": {
+					"description": "",
+					"type": ""
+				},
+				"words": {
+					"description": "",
+					"type": ""
+				},
+				"gram": {
+					"description": "",
+					"type": ""
+				},
+				"label4": {
+					"description": "",
+					"type": ""
+				},
+				"cite": {
+					"description": "",
+					"type": ""
+				},
+				"source": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"WordSearchResults": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				},
+				"label1": {
+					"description": "",
+					"type": ""
+				},
+				"relationshipType": {
+					"description": "",
+					"type": ""
+				},
+				"label2": {
+					"description": "",
+					"type": ""
+				},
+				"label3": {
+					"description": "",
+					"type": ""
+				},
+				"words": {
+					"description": "",
+					"type": ""
+				},
+				"gram": {
+					"description": "",
+					"type": ""
+				},
+				"label4": {
+					"description": "",
+					"type": ""
+				},
+				"cite": {
+					"description": "",
+					"type": ""
+				},
+				"source": {
+					"description": "",
+					"type": ""
+				},
+				"searchResults": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"Category": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				},
+				"label1": {
+					"description": "",
+					"type": ""
+				},
+				"relationshipType": {
+					"description": "",
+					"type": ""
+				},
+				"label2": {
+					"description": "",
+					"type": ""
+				},
+				"label3": {
+					"description": "",
+					"type": ""
+				},
+				"words": {
+					"description": "",
+					"type": ""
+				},
+				"gram": {
+					"description": "",
+					"type": ""
+				},
+				"label4": {
+					"description": "",
+					"type": ""
+				},
+				"cite": {
+					"description": "",
+					"type": ""
+				},
+				"source": {
+					"description": "",
+					"type": ""
+				},
+				"searchResults": {
+					"description": "",
+					"type": ""
+				},
+				"name": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"SimpleDefinition": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				},
+				"label1": {
+					"description": "",
+					"type": ""
+				},
+				"relationshipType": {
+					"description": "",
+					"type": ""
+				},
+				"label2": {
+					"description": "",
+					"type": ""
+				},
+				"label3": {
+					"description": "",
+					"type": ""
+				},
+				"words": {
+					"description": "",
+					"type": ""
+				},
+				"gram": {
+					"description": "",
+					"type": ""
+				},
+				"label4": {
+					"description": "",
+					"type": ""
+				},
+				"cite": {
+					"description": "",
+					"type": ""
+				},
+				"source": {
+					"description": "",
+					"type": ""
+				},
+				"searchResults": {
+					"description": "",
+					"type": ""
+				},
+				"name": {
+					"description": "",
+					"type": ""
+				},
+				"text": {
+					"description": "",
+					"type": ""
+				},
+				"partOfSpeech": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"Root": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				},
+				"label1": {
+					"description": "",
+					"type": ""
+				},
+				"relationshipType": {
+					"description": "",
+					"type": ""
+				},
+				"label2": {
+					"description": "",
+					"type": ""
+				},
+				"label3": {
+					"description": "",
+					"type": ""
+				},
+				"words": {
+					"description": "",
+					"type": ""
+				},
+				"gram": {
+					"description": "",
+					"type": ""
+				},
+				"label4": {
+					"description": "",
+					"type": ""
+				},
+				"cite": {
+					"description": "",
+					"type": ""
+				},
+				"source": {
+					"description": "",
+					"type": ""
+				},
+				"searchResults": {
+					"description": "",
+					"type": ""
+				},
+				"name": {
+					"description": "",
+					"type": ""
+				},
+				"text": {
+					"description": "",
+					"type": ""
+				},
+				"partOfSpeech": {
+					"description": "",
+					"type": ""
+				},
+				"categories": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"ExampleUsage": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				},
+				"label1": {
+					"description": "",
+					"type": ""
+				},
+				"relationshipType": {
+					"description": "",
+					"type": ""
+				},
+				"label2": {
+					"description": "",
+					"type": ""
+				},
+				"label3": {
+					"description": "",
+					"type": ""
+				},
+				"words": {
+					"description": "",
+					"type": ""
+				},
+				"gram": {
+					"description": "",
+					"type": ""
+				},
+				"label4": {
+					"description": "",
+					"type": ""
+				},
+				"cite": {
+					"description": "",
+					"type": ""
+				},
+				"source": {
+					"description": "",
+					"type": ""
+				},
+				"searchResults": {
+					"description": "",
+					"type": ""
+				},
+				"name": {
+					"description": "",
+					"type": ""
+				},
+				"text": {
+					"description": "",
+					"type": ""
+				},
+				"partOfSpeech": {
+					"description": "",
+					"type": ""
+				},
+				"categories": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"ContentProvider": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				},
+				"label1": {
+					"description": "",
+					"type": ""
+				},
+				"relationshipType": {
+					"description": "",
+					"type": ""
+				},
+				"label2": {
+					"description": "",
+					"type": ""
+				},
+				"label3": {
+					"description": "",
+					"type": ""
+				},
+				"words": {
+					"description": "",
+					"type": ""
+				},
+				"gram": {
+					"description": "",
+					"type": ""
+				},
+				"label4": {
+					"description": "",
+					"type": ""
+				},
+				"cite": {
+					"description": "",
+					"type": ""
+				},
+				"source": {
+					"description": "",
+					"type": ""
+				},
+				"searchResults": {
+					"description": "",
+					"type": ""
+				},
+				"name": {
+					"description": "",
+					"type": ""
+				},
+				"text": {
+					"description": "",
+					"type": ""
+				},
+				"partOfSpeech": {
+					"description": "",
+					"type": ""
+				},
+				"categories": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"Label": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				},
+				"label1": {
+					"description": "",
+					"type": ""
+				},
+				"relationshipType": {
+					"description": "",
+					"type": ""
+				},
+				"label2": {
+					"description": "",
+					"type": ""
+				},
+				"label3": {
+					"description": "",
+					"type": ""
+				},
+				"words": {
+					"description": "",
+					"type": ""
+				},
+				"gram": {
+					"description": "",
+					"type": ""
+				},
+				"label4": {
+					"description": "",
+					"type": ""
+				},
+				"cite": {
+					"description": "",
+					"type": ""
+				},
+				"source": {
+					"description": "",
+					"type": ""
+				},
+				"searchResults": {
+					"description": "",
+					"type": ""
+				},
+				"name": {
+					"description": "",
+					"type": ""
+				},
+				"text": {
+					"description": "",
+					"type": ""
+				},
+				"partOfSpeech": {
+					"description": "",
+					"type": ""
+				},
+				"categories": {
+					"description": "",
+					"type": ""
+				},
+				"type": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"SimpleExample": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				},
+				"label1": {
+					"description": "",
+					"type": ""
+				},
+				"relationshipType": {
+					"description": "",
+					"type": ""
+				},
+				"label2": {
+					"description": "",
+					"type": ""
+				},
+				"label3": {
+					"description": "",
+					"type": ""
+				},
+				"words": {
+					"description": "",
+					"type": ""
+				},
+				"gram": {
+					"description": "",
+					"type": ""
+				},
+				"label4": {
+					"description": "",
+					"type": ""
+				},
+				"cite": {
+					"description": "",
+					"type": ""
+				},
+				"source": {
+					"description": "",
+					"type": ""
+				},
+				"searchResults": {
+					"description": "",
+					"type": ""
+				},
+				"name": {
+					"description": "",
+					"type": ""
+				},
+				"text": {
+					"description": "",
+					"type": ""
+				},
+				"partOfSpeech": {
+					"description": "",
+					"type": ""
+				},
+				"categories": {
+					"description": "",
+					"type": ""
+				},
+				"type": {
+					"description": "",
+					"type": ""
+				},
+				"title": {
+					"description": "",
+					"type": ""
+				},
+				"url": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"Definition": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				},
+				"label1": {
+					"description": "",
+					"type": ""
+				},
+				"relationshipType": {
+					"description": "",
+					"type": ""
+				},
+				"label2": {
+					"description": "",
+					"type": ""
+				},
+				"label3": {
+					"description": "",
+					"type": ""
+				},
+				"words": {
+					"description": "",
+					"type": ""
+				},
+				"gram": {
+					"description": "",
+					"type": ""
+				},
+				"label4": {
+					"description": "",
+					"type": ""
+				},
+				"cite": {
+					"description": "",
+					"type": ""
+				},
+				"source": {
+					"description": "",
+					"type": ""
+				},
+				"searchResults": {
+					"description": "",
+					"type": ""
+				},
+				"name": {
+					"description": "",
+					"type": ""
+				},
+				"text": {
+					"description": "",
+					"type": ""
+				},
+				"partOfSpeech": {
+					"description": "",
+					"type": ""
+				},
+				"categories": {
+					"description": "",
+					"type": ""
+				},
+				"type": {
+					"description": "",
+					"type": ""
+				},
+				"title": {
+					"description": "",
+					"type": ""
+				},
+				"url": {
+					"description": "",
+					"type": ""
+				},
+				"extendedText": {
+					"description": "",
+					"type": ""
+				},
+				"sourceDictionary": {
+					"description": "",
+					"type": ""
+				},
+				"citations": {
+					"description": "",
+					"type": ""
+				},
+				"labels": {
+					"description": "",
+					"type": ""
+				},
+				"score": {
+					"description": "",
+					"type": ""
+				},
+				"exampleUses": {
+					"description": "",
+					"type": ""
+				},
+				"attributionUrl": {
+					"description": "",
+					"type": ""
+				},
+				"seqString": {
+					"description": "",
+					"type": ""
+				},
+				"attributionText": {
+					"description": "",
+					"type": ""
+				},
+				"relatedWords": {
+					"description": "",
+					"type": ""
+				},
+				"sequence": {
+					"description": "",
+					"type": ""
+				},
+				"notes": {
+					"description": "",
+					"type": ""
+				},
+				"textProns": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"PartOfSpeech": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				},
+				"label1": {
+					"description": "",
+					"type": ""
+				},
+				"relationshipType": {
+					"description": "",
+					"type": ""
+				},
+				"label2": {
+					"description": "",
+					"type": ""
+				},
+				"label3": {
+					"description": "",
+					"type": ""
+				},
+				"words": {
+					"description": "",
+					"type": ""
+				},
+				"gram": {
+					"description": "",
+					"type": ""
+				},
+				"label4": {
+					"description": "",
+					"type": ""
+				},
+				"cite": {
+					"description": "",
+					"type": ""
+				},
+				"source": {
+					"description": "",
+					"type": ""
+				},
+				"searchResults": {
+					"description": "",
+					"type": ""
+				},
+				"name": {
+					"description": "",
+					"type": ""
+				},
+				"text": {
+					"description": "",
+					"type": ""
+				},
+				"partOfSpeech": {
+					"description": "",
+					"type": ""
+				},
+				"categories": {
+					"description": "",
+					"type": ""
+				},
+				"type": {
+					"description": "",
+					"type": ""
+				},
+				"title": {
+					"description": "",
+					"type": ""
+				},
+				"url": {
+					"description": "",
+					"type": ""
+				},
+				"extendedText": {
+					"description": "",
+					"type": ""
+				},
+				"sourceDictionary": {
+					"description": "",
+					"type": ""
+				},
+				"citations": {
+					"description": "",
+					"type": ""
+				},
+				"labels": {
+					"description": "",
+					"type": ""
+				},
+				"score": {
+					"description": "",
+					"type": ""
+				},
+				"exampleUses": {
+					"description": "",
+					"type": ""
+				},
+				"attributionUrl": {
+					"description": "",
+					"type": ""
+				},
+				"seqString": {
+					"description": "",
+					"type": ""
+				},
+				"attributionText": {
+					"description": "",
+					"type": ""
+				},
+				"relatedWords": {
+					"description": "",
+					"type": ""
+				},
+				"sequence": {
+					"description": "",
+					"type": ""
+				},
+				"notes": {
+					"description": "",
+					"type": ""
+				},
+				"textProns": {
+					"description": "",
+					"type": ""
+				},
+				"roots": {
+					"description": "",
+					"type": ""
+				},
+				"storageAbbr": {
+					"description": "",
+					"type": ""
+				},
+				"allCategories": {
+					"description": "",
+					"type": ""
+				}
+			}
+		},
+		"TextPron": {
+			"properties": {
+				"count": {
+					"description": "",
+					"type": ""
+				},
+				"lexicality": {
+					"description": "",
+					"type": ""
+				},
+				"word": {
+					"description": "",
+					"type": ""
+				},
+				"id": {
+					"description": "",
+					"type": ""
+				},
+				"parentId": {
+					"description": "",
+					"type": ""
+				},
+				"category": {
+					"description": "",
+					"type": ""
+				},
+				"createdBy": {
+					"description": "",
+					"type": ""
+				},
+				"createdAt": {
+					"description": "",
+					"type": ""
+				},
+				"contentProvider": {
+					"description": "",
+					"type": ""
+				},
+				"htmlExtra": {
+					"description": "",
+					"type": ""
+				},
+				"definitions": {
+					"description": "",
+					"type": ""
+				},
+				"examples": {
+					"description": "",
+					"type": ""
+				},
+				"note": {
+					"description": "",
+					"type": ""
+				},
+				"publishDate": {
+					"description": "",
+					"type": ""
+				},
+				"noteType": {
+					"description": "",
+					"type": ""
+				},
+				"appliesTo": {
+					"description": "",
+					"type": ""
+				},
+				"value": {
+					"description": "",
+					"type": ""
+				},
+				"pos": {
+					"description": "",
+					"type": ""
+				},
+				"results": {
+					"description": "",
+					"type": ""
+				},
+				"totalResults": {
+					"description": "",
+					"type": ""
+				},
+				"originalWord": {
+					"description": "",
+					"type": ""
+				},
+				"suggestions": {
+					"description": "",
+					"type": ""
+				},
+				"canonicalForm": {
+					"description": "",
+					"type": ""
+				},
+				"vulgar": {
+					"description": "",
+					"type": ""
+				},
+				"label1": {
+					"description": "",
+					"type": ""
+				},
+				"relationshipType": {
+					"description": "",
+					"type": ""
+				},
+				"label2": {
+					"description": "",
+					"type": ""
+				},
+				"label3": {
+					"description": "",
+					"type": ""
+				},
+				"words": {
+					"description": "",
+					"type": ""
+				},
+				"gram": {
+					"description": "",
+					"type": ""
+				},
+				"label4": {
+					"description": "",
+					"type": ""
+				},
+				"cite": {
+					"description": "",
+					"type": ""
+				},
+				"source": {
+					"description": "",
+					"type": ""
+				},
+				"searchResults": {
+					"description": "",
+					"type": ""
+				},
+				"name": {
+					"description": "",
+					"type": ""
+				},
+				"text": {
+					"description": "",
+					"type": ""
+				},
+				"partOfSpeech": {
+					"description": "",
+					"type": ""
+				},
+				"categories": {
+					"description": "",
+					"type": ""
+				},
+				"type": {
+					"description": "",
+					"type": ""
+				},
+				"title": {
+					"description": "",
+					"type": ""
+				},
+				"url": {
+					"description": "",
+					"type": ""
+				},
+				"extendedText": {
+					"description": "",
+					"type": ""
+				},
+				"sourceDictionary": {
+					"description": "",
+					"type": ""
+				},
+				"citations": {
+					"description": "",
+					"type": ""
+				},
+				"labels": {
+					"description": "",
+					"type": ""
+				},
+				"score": {
+					"description": "",
+					"type": ""
+				},
+				"exampleUses": {
+					"description": "",
+					"type": ""
+				},
+				"attributionUrl": {
+					"description": "",
+					"type": ""
+				},
+				"seqString": {
+					"description": "",
+					"type": ""
+				},
+				"attributionText": {
+					"description": "",
+					"type": ""
+				},
+				"relatedWords": {
+					"description": "",
+					"type": ""
+				},
+				"sequence": {
+					"description": "",
+					"type": ""
+				},
+				"notes": {
+					"description": "",
+					"type": ""
+				},
+				"textProns": {
+					"description": "",
+					"type": ""
+				},
+				"roots": {
+					"description": "",
+					"type": ""
+				},
+				"storageAbbr": {
+					"description": "",
+					"type": ""
+				},
+				"allCategories": {
+					"description": "",
+					"type": ""
+				},
+				"raw": {
+					"description": "",
+					"type": ""
+				},
+				"seq": {
+					"description": "",
+					"type": ""
+				},
+				"rawType": {
+					"description": "",
+					"type": ""
+				}
+			}
+		}
+	}
+}

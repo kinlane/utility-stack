@@ -1,0 +1,100 @@
+{
+  "swagger": 2,
+  "info": {
+    "title": "AlchemyAPI Author Extraction API",
+    "description": "AlchemyAPI provides easy-to-use facilities for extracting author information embedded within news articles and blog posts. These URL processing calls automatically fetch the desired Internet webpage, extracting any author information embedded within.",
+    "termsOfService": null,
+    "version": "1.0"
+  },
+  "host": "access.alchemyapi.com",
+  "basePath": "/calls/url",
+  "schemes": [
+    "http"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/URLGetAuthor": {
+      "get": {
+        "summary": "Extracts Author Information",
+        "description": "AlchemyAPI provides easy-to-use facilities for extracting author information embedded within news articles and blog posts",
+        "operationId": "getAuthor",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "http url (must be uri-argument encoded) ",
+            "required": false,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "apikey",
+            "in": "query",
+            "description": "your private api key",
+            "required": false,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "outputMode",
+            "in": "query",
+            "description": "desired API output format",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          },
+          {
+            "name": "jsonp",
+            "in": "query",
+            "description": "desired JSONP callback",
+            "required": true,
+            "type": "string",
+            "format": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Author Reponse",
+            "schema": {
+                "type": "array",
+                "items": {
+                    "$ref": "Author"
+                }
+            }
+          }
+        },
+        "tags": [
+          "Blog",
+          " Articles",
+          " Author",
+          " Content",
+          " Text"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Author": {
+      "properties": {
+        "status": {
+          "description": "success / failure status indicating whether the request was processed.",
+          "type": "string"
+        },
+        "url": {
+          "description": "http url information was requested for.",
+          "type": "string"
+        },
+        "author": {
+          "description": "the extracted author name.",
+          "type": "string"
+        },
+        "statusInfo": {
+          "description": "failure status information",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

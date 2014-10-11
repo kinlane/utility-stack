@@ -1,0 +1,316 @@
+{
+  "swagger": 2,
+  "info": {
+    "title": "Wordnik WordList API",
+    "description": "API that provides a list or collection of words.",
+    "termsOfService": null,
+    "version": "4.0"
+  },
+  "host": "/wordList",
+  "basePath": "http://api.wordnik.com/v4",
+  "schemes": [
+    "http"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/wordList.{format}/{permalink}": {
+      "": {
+        "summary": "Updates an existing WordList",
+        "description": "",
+        "operationId": "updateWordList",
+        "parameters": [
+          {
+            "name": "permalink",
+            "in": "path",
+            "description": "permalink of WordList to update",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "",
+            "in": "body",
+            "description": "Updated WordList",
+            "required": true,
+            "type": "wordlist"
+          },
+          {
+            "name": "auth_token",
+            "in": "header",
+            "description": "The auth token of the logged-in user, obtained by calling /account.{format}/authenticate/{username} (described above)",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          ""
+        ]
+      }
+    },
+    "/wordList.{format}/{permalink}/words": {
+      "": {
+        "summary": "Adds words to a WordList",
+        "description": "",
+        "operationId": "addWordsToWordList",
+        "parameters": [
+          {
+            "name": "permalink",
+            "in": "path",
+            "description": "permalink of WordList to user",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "",
+            "in": "body",
+            "description": "Array of words to add to WordList",
+            "required": true,
+            "type": "array[stringvalue]"
+          },
+          {
+            "name": "auth_token",
+            "in": "header",
+            "description": "The auth token of the logged-in user, obtained by calling /account.{format}/authenticate/{username} (described above)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Field to sort by",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "description": "Direction to sort",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "Results to skip",
+            "required": true,
+            "type": "int"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results to return",
+            "required": true,
+            "type": "int"
+          }
+        ],
+        "tags": [
+          ""
+        ]
+      }
+    },
+    "/wordList.{format}/{permalink}/deleteWords": {
+      "": {
+        "summary": "Removes words from a WordList",
+        "description": "",
+        "operationId": "deleteWordsFromWordList",
+        "parameters": [
+          {
+            "name": "permalink",
+            "in": "path",
+            "description": "permalink of WordList to use",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "",
+            "in": "body",
+            "description": "Words to remove from WordList",
+            "required": true,
+            "type": "array[stringvalue]"
+          },
+          {
+            "name": "auth_token",
+            "in": "header",
+            "description": "The auth token of the logged-in user, obtained by calling /account.{format}/authenticate/{username} (described above)",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          ""
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "WordList": {
+      "properties": {
+        "id": {
+          "description": "",
+          "type": ""
+        },
+        "permalink": {
+          "description": "",
+          "type": ""
+        },
+        "name": {
+          "description": "",
+          "type": ""
+        },
+        "createdAt": {
+          "description": "",
+          "type": ""
+        },
+        "updatedAt": {
+          "description": "",
+          "type": ""
+        },
+        "lastActivityAt": {
+          "description": "",
+          "type": ""
+        },
+        "username": {
+          "description": "",
+          "type": ""
+        },
+        "userId": {
+          "description": "",
+          "type": ""
+        },
+        "description": {
+          "description": "",
+          "type": ""
+        },
+        "numberWordsInList": {
+          "description": "",
+          "type": ""
+        },
+        "type": {
+          "description": "",
+          "type": ""
+        }
+      }
+    },
+    "WordListWord": {
+      "properties": {
+        "id": {
+          "description": "",
+          "type": ""
+        },
+        "permalink": {
+          "description": "",
+          "type": ""
+        },
+        "name": {
+          "description": "",
+          "type": ""
+        },
+        "createdAt": {
+          "description": "",
+          "type": ""
+        },
+        "updatedAt": {
+          "description": "",
+          "type": ""
+        },
+        "lastActivityAt": {
+          "description": "",
+          "type": ""
+        },
+        "username": {
+          "description": "",
+          "type": ""
+        },
+        "userId": {
+          "description": "",
+          "type": ""
+        },
+        "description": {
+          "description": "",
+          "type": ""
+        },
+        "numberWordsInList": {
+          "description": "",
+          "type": ""
+        },
+        "type": {
+          "description": "",
+          "type": ""
+        },
+        "word": {
+          "description": "",
+          "type": ""
+        },
+        "numberCommentsOnWord": {
+          "description": "",
+          "type": ""
+        },
+        "numberLists": {
+          "description": "",
+          "type": ""
+        }
+      }
+    },
+    "StringValue": {
+      "properties": {
+        "id": {
+          "description": "",
+          "type": ""
+        },
+        "permalink": {
+          "description": "",
+          "type": ""
+        },
+        "name": {
+          "description": "",
+          "type": ""
+        },
+        "createdAt": {
+          "description": "",
+          "type": ""
+        },
+        "updatedAt": {
+          "description": "",
+          "type": ""
+        },
+        "lastActivityAt": {
+          "description": "",
+          "type": ""
+        },
+        "username": {
+          "description": "",
+          "type": ""
+        },
+        "userId": {
+          "description": "",
+          "type": ""
+        },
+        "description": {
+          "description": "",
+          "type": ""
+        },
+        "numberWordsInList": {
+          "description": "",
+          "type": ""
+        },
+        "type": {
+          "description": "",
+          "type": ""
+        },
+        "word": {
+          "description": "",
+          "type": ""
+        },
+        "numberCommentsOnWord": {
+          "description": "",
+          "type": ""
+        },
+        "numberLists": {
+          "description": "",
+          "type": ""
+        }
+      }
+    }
+  }
+}
