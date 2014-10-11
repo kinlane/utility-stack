@@ -9,9 +9,11 @@
                                       
                     <script id="apiListingTemplate" type="text/template"> 
                         {% raw  %}  
-                        <a href="{{baseURL}}" target="_blank" title="{{name}}">
-                            {{name}}
-                        </a>   
+                        <li>
+                        	<a href="{{baseURL}}" target="_blank" title="{{name}}">
+                            	{{name}}
+                        	</a>
+                        </li>   
                         {% endraw %}                                                                                                                    
                     </script>  
                      
@@ -29,7 +31,7 @@
                     </script>
                
                     <h3>APIs</h3>
-                    <div id="apiListingContainer" align="center"><br /><br /> </div>
+                    <ul id="apiListingContainer" align="center"</ul>
                     
                     <script type="text/javascript">
                         listAPIs();
